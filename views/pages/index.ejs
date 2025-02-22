@@ -32,6 +32,29 @@
                         const data = await response.json();
                         console.log(data)
                         conversation.value += `AI: ${data.response}\n`;
+                        links = document.getElementById("links")
+                        if(data.response.toLowerCase().includes("breathing space") && !(links.value.toLowerCase().includes("breathing space"))){
+                            links.value += "Breathing Space: https://www.breathingspace.scot/ \n"
+                        }
+
+                        if(data.response.toLowerCase().includes("abz") && !(links.value.toLowerCase().includes("abz"))){
+                            links.value += "ABZ Works: https://abzworks.co.uk/ \n"
+                        }
+                        if(data.response.toLowerCase().includes("citizens") && !(links.value.toLowerCase().includes("citizens"))){
+                            links.value += "Citizens Advice: https://www.cas.org.uk/helptoclaim \n"
+                        }
+                        if(((data.response.toLowerCase().includes("samh") && !(links.value.toLowerCase().includes("samh"))) || (data.response.toLowerCase().includes("scottish association for mental health") && !(links.value.toLowerCase().includes("samh"))))){
+                            links.value += "SAMH (Scottish Association for Mental Health): https://www.samh.org.uk/ \n"
+                        }
+                        if(((data.response.toLowerCase().includes("swf") && !(links.value.toLowerCase().includes("swf"))) || (data.response.toLowerCase().includes("scottish welfare fund") && !(links.value.toLowerCase().includes("swf"))))){
+                            links.value += "SWF (Scottish Welfare Fund): https://www.mygov.scot/scottish-welfare-fund or https://www.aberdeencity.gov.uk/services/benefits-and-advice/apply-scottish-welfare-fund \n"
+                        }
+
+                        if(data.response.toLowerCase().includes("conflict resolution") && !(links.value.toLowerCase().includes("scottish conflict resolution"))){
+                            links.value += "Scottish Conflict Resolution: https://www.scottishconflictresolution.org.uk/ \n"
+                        }
+
+
                     } catch (error) {
                         console.error("Error:", error);
                         conversation.value += `Error: ${error.message}\n`;
@@ -81,6 +104,9 @@
                 <h2>user input</h2>
                 <textarea id="input"></textarea>
                 <button id="sendbutton" onclick="getInput()">send</button>
+
+                <h2>Mentioned websites:</h2>
+                <textarea id="links" readonly></textarea>
             </div>
             
             <div class="slideshow-container">
