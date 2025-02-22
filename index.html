@@ -1,24 +1,15 @@
     <!DOCTYPE html>
     <html lan="en">
         
-        <head>
-            <title>
-                Aberdeen City Council
-            </title>
-            <link rel="stylesheet" href="assets/styles.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <head>
+        <title>
+            Aberdeen City Council
+        </title>
+        <link rel="stylesheet" href="assets/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-            <style>
-                #conversation {
-
-                }
-
-                #userinput {
-
-            }
-        </style> 
         <script type="text/javascript" src="assets/scripts/responsive.js"></script>
-        <script type ="text/javascript">src="openai.js"</script>
+        <script type ="text/javascript" src="openai.js"></script>
         <script>
             function getInput(){
                 input = document.getElementById("input").value;
@@ -37,12 +28,12 @@
             <h1>Aberdeen City Council</h1>
             <div class="topnav" id="myTopnav">
                 <a href="#home" class="active">Home</a>
-                <a href="#news">Housing</a>
-                <a href="#contact">Finance</a>
-                <a href="#about">Health</a>
-                <a href="#about">Employment</a>
-                <a href="#about">Domestic Abuse</a>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <a href="#housing">Housing</a>
+                <a href="#finance">Finance</a>
+                <a href="#health">Health</a>
+                <a href="#employment">Employment</a>
+                <a href="#abuse">Domestic Abuse</a>
+                <a href="javascript:void(0);" class="icon" onclick="resizeNavBar()">
                   <i class="fa fa-bars"></i>
                 </a>
               </div>
