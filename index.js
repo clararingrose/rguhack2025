@@ -25,19 +25,19 @@ app.get('/abuse', function(req, res){
 });
 
 app.get('/employment', function(req, res){
-    res.render('pages/employment');
+    res.render('pages/employment', {resources: filterJSON('Employment')});
 });
 
 app.get('/finance', function(req, res){
-    res.render('pages/finance');
+    res.render('pages/finance', {resources: filterJSON('Finance')});
 });
 
 app.get('/health', function(req, res){
-    res.render('pages/health');
+    res.render('pages/health', {resources: filterJSON('Health')});
 });
 
 app.get('/housing', function(req, res){
-    res.render('pages/housing');
+    res.render('pages/housing', {resources: filterJSON('Housing')});
 });
 
 app.post('/', async (req, res) => {
