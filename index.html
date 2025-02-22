@@ -16,52 +16,25 @@
 
                 }
             </style> 
-            <!-- <script type = "application/javascript" src="openai.js"></script> -->
-            <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
-             <script>
-                        
-async function getInput(){
-    input = document.getElementById("input").value;
-    conversation = document.getElementById("conversation")
-    conversation.value += input
-
-    try {
-                const response = await fetch("/", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ prompt: input })
-                });
-
-                const data = await response.json();
-                conversation.value += `AI: ${data.response}\n`;
-            } catch (error) {
-                console.error("Error:", error);
-            }
-
-    // response = callOpenAI(input)
-    // conversation.value += response
-    document.getElementById("input").value = "";
-
-}
-
-
-             </script>
+            <script type = "application/javascript" src="openai.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
         </head>
         <body>
             <header>
                 <img src="assets/images/acc_logo.jpg" id="acclogo">
                 <h1>Aberdeen City Council</h1>
-                <nav>
-                    <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Housing</a></li>
-                        <li><a href="">Finance</a></li>
-                        <li><a href="">Health</a></li>
-                        <li><a href="">Employment</a></li>
-                        <li><a href="">Domestic Abuse</a></li>
-                    </ul>
-                </nav>
+                <div class="topnav" id="myTopnav">
+                    <a href="#home" class="active">Home</a>
+                    <a href="#housing">Housing</a>
+                    <a href="#finance">Finance</a>
+                    <a href="#health">Health</a>
+                    <a href="#employment">Employment</a>
+                    <a href="#abuse">Domestic Abuse</a>
+                    <a href="javascript:void(0);" class="icon" onclick="resizeNavBar()">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                  </div>
             </header>
 
             <div id="item1">
