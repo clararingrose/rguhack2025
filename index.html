@@ -15,14 +15,15 @@
             #userinput {
 
             }
-        </style>
+        </style> 
+        <script type = "text/javascript">src="openai.js"</script>
         <script>
             function getInput(){
                 input = document.getElementById("input");
                 conversation = document.getElementById("conversation")
                 conversation.value += "/n" + input
-
-                //call api. conversation.value += "/n" + response.body.content
+                response = callOpenAI(input)
+                conversation.value += "/n" + response
                 
 
             }
