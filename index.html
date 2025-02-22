@@ -19,11 +19,11 @@
         <script type = "text/javascript">src="openai.js"</script>
         <script>
             function getInput(){
-                input = document.getElementById("input");
+                input = document.getElementById("input").value;
                 conversation = document.getElementById("conversation")
-                conversation.value += "/n" + input
+                conversation.value += input
                 response = callOpenAI(input)
-                conversation.value += "/n" + response
+                conversation.value += response
                 
 
             }
