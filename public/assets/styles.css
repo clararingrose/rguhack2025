@@ -83,15 +83,22 @@ body {
 }
 
 #conversation{
+/*   
+  display: block;
+  margin-left:auto;
+  margin-right: auto; */
   width:60%;
   height: 350px;
   font-family: 'Times New Roman', Times, serif;
   font-size: large;
   border-radius: 20px;
 
-
 }
 #input{
+/*     
+  display: block;
+  margin-left:auto;
+  margin-right: auto; */
   width:60%;
   font-family: 'Times New Roman', Times, serif;
   font-size: large;
