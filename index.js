@@ -4,17 +4,15 @@ var app = express();
 const bodyParser = require('body-parser');
 app.use(express.static('public'));
 
-
+//routing class pages
+app.set('view engine', 'ejs')
 
 app.get('/', function(req, res){
 //  res.send("Hello world! by express");
- res.sendFile(path.join(__dirname, '/index.html'));
+ res.render('pages/index');
 });
 app.use(bodyParser.json());
 
-
-//routing class pages
-app.set('view engine', 'ejs')
 
 app.get('/abuse', function(req, res){
  res.render('pages/abuse');
