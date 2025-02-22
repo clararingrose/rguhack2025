@@ -15,7 +15,9 @@
                         alert("Please enter a message.");
                         return;
                     }
-
+                    if(input.includes("bomb")){
+                        return;
+                    }
                     conversation.value += `You: ${input}\n`;
 
                     try {
