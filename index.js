@@ -9,6 +9,13 @@ app.get('/', function(req, res){
  res.sendFile(path.join(__dirname, '/index.html'));
 });
 
+//routing class pages
+app.set('view engine', 'ejs')
+
+app.get('/abuse', function(req, res){
+ res.render('pages/abuse');
+});
+
 app.post('/', async(req, res) => {
 
     const {prompt} = req.body;
