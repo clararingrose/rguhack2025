@@ -1,5 +1,5 @@
 body {
-    background-color: aqua;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 ul {
@@ -7,7 +7,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #412a45;
     position: fixed;
     top: 0;
     width: 100%;
@@ -28,5 +28,9 @@ ul {
   
   /* Change the link color to #111 (black) on hover */
   li a:hover {
-    background-color: #111;
+    background-color: #342237;
   } 
+
+  #acclogo {
+    width:95px;
+  }
