@@ -45,7 +45,7 @@ async function callOpenAI(prompt) {
     
     const response = await axios.post(url, {
         model: 'gpt-4o-mini',
-        messages: [{role: 'system', content: "you are an assistant who focuses on homelessness, you're goal is to assist the end user with finding valid information to the aberdeen area. if the user mentions financial issues, you should refer to the citizens advice prompt. if they mention anything mental health related, all information should be derived from the low mood prompt"}, 
+        messages: [{role: 'system', content: "you are an assistant who focuses on homelessness, your goal is to assist the end user with finding valid information to the aberdeen area. if the user mentions financial issues, you should refer to the citizens advice prompt. if they mention anything mental health related, all information should be derived from the low mood prompt"}, 
             // {role: 'citizens advice', content: ""},
             { role: 'user', content: prompt }],
         temperature: 0.7
