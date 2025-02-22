@@ -18,9 +18,12 @@
         </style>
         <script>
             function getInput(){
-                input = document.getElementById("input")
+                input = document.getElementById("input");
+                conversation = document.getElementById("conversation")
+                conversation.value += "/n" + input
 
-
+                //call api. conversation.value += "/n" + response.body.content
+                
 
             }
         </script>
