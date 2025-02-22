@@ -33,6 +33,9 @@
                         console.log(data)
                         conversation.value += `AI: ${data.response}\n`;
                         links = document.getElementById("links")
+                        links.style.display = 'block';
+
+                        document.getElementById("Mentioned").style.color = 'black';
                         if(data.response.toLowerCase().includes("breathing space") && !(links.value.toLowerCase().includes("breathing space"))){
                             links.value += "Breathing Space: https://www.breathingspace.scot/ \n"
                         }
@@ -106,7 +109,7 @@
                 <textarea id="input"></textarea>
                 <button id="sendbutton" onclick="getInput()">send</button>
 
-                <h2>Mentioned websites:</h2>
+                <p id="Mentioned">Mentioned websites:</p>
                 <textarea id="links" readonly></textarea>
             </div>
             
