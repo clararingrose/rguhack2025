@@ -15,7 +15,23 @@ app.use(bodyParser.json());
 
 
 app.get('/abuse', function(req, res){
- res.render('pages/abuse');
+    res.render('pages/abuse');
+});
+
+app.get('/employment', function(req, res){
+    res.render('pages/employment');
+});
+
+app.get('/finance', function(req, res){
+    res.render('pages/finance');
+});
+
+app.get('/health', function(req, res){
+    res.render('pages/health');
+});
+
+app.get('/housing', function(req, res){
+    res.render('pages/housing');
 });
 
 app.post('/', async (req, res) => {
