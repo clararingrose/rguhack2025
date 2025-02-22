@@ -1,4 +1,4 @@
-const axios = require('axios');
+// const axios = require('axios');
 const apiKey = process.env.OPENAI_API_KEY;
 
 
@@ -21,3 +21,13 @@ async function callOpenAI(prompt) {
 }
 
 module.exports = callOpenAI;
+
+function getInput(){
+    input = document.getElementById("input").value;
+    conversation = document.getElementById("conversation")
+    conversation.value += input
+    response = callOpenAI(input)
+    conversation.value += response
+    
+
+}

@@ -1,59 +1,50 @@
-<!DOCTYPE html>
-<html lan="en">
-    
-    <head>
-        <title>
-            Aberdeen City Council
-        </title>
-        <link rel="stylesheet" href="assets/styles.css">
-
-        <style>
-            #conversation {
-
-            }
-
-            #userinput {
-
-            }
-        </style> 
-        <script type = "text/javascript" src="index.js"></script>
-        <script>
-            function getInput(){
-                input = document.getElementById("input").value;
-                conversation = document.getElementById("conversation")
-                conversation.value += input
-                response = callOpenAI(input)
-                conversation.value += response
-                
-
-            }
-        </script>
-    </head>
-    <body>
-        <header>
-            <img src="assets/images/acc_logo.jpg" id="acclogo">
-            <h1>Aberdeen City Council</h1>
-            <nav>
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Housing</a></li>
-                    <li><a href="">Finance</a></li>
-                    <li><a href="">Health</a></li>
-                    <li><a href="">Employment</a></li>
-                    <li><a href="">Domestic Abuse</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <div id="item1">
-            <h2>conversation</h2>
-            <textarea id="conversation" readonly></textarea>
-
-            <h2>user input</h2>
-            <textarea id="input"></textarea>
-            <button id="sendbutton" onclick="getInput()">send</button>
-        </div>
+    <!DOCTYPE html>
+    <html lan="en">
         
-    </body>    
-    
-</html>
+        <head>
+            <title>
+                Aberdeen City Council
+            </title>
+            <link rel="stylesheet" href="assets/styles.css">
+
+            <style>
+                #conversation {
+
+                }
+
+                #userinput {
+
+                }
+            </style> 
+            <script type = "application/javascript" src="openai.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        </head>
+        <body>
+            <header>
+                <img src="assets/images/acc_logo.jpg" id="acclogo">
+                <h1>Aberdeen City Council</h1>
+                <nav>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Housing</a></li>
+                        <li><a href="">Finance</a></li>
+                        <li><a href="">Health</a></li>
+                        <li><a href="">Employment</a></li>
+                        <li><a href="">Domestic Abuse</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div id="item1">
+                <h2>conversation</h2>
+                <textarea id="conversation" readonly></textarea>
+
+                <h2>user input</h2>
+                <textarea id="input"></textarea>
+                <button id="sendbutton" onclick="getInput()">send</button>
+            </div>
+            
+        </body>    
+        
+    </html>
