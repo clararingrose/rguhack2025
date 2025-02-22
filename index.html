@@ -6,6 +6,24 @@
             Aberdeen City Council
         </title>
         <link rel="stylesheet" href="assets/styles.css">
+
+        <style>
+            #conversation {
+
+            }
+
+            #userinput {
+
+            }
+        </style>
+        <script>
+            function getInput(){
+                input = document.getElementById("input")
+
+
+
+            }
+        </script>
     </head>
     <body>
         <h1>Aberdeen City Council</h1>
@@ -20,6 +38,12 @@
             </ul>
         </nav>
 
+        <h2>conversation</h2>
+        <textarea id="conversation" readonly></textarea>
+
+        <h2>user input</h2>
+        <textarea id="input"></textarea>
+        <button id="sendbutton" onclick="getInput()">send</button>
         
     </body>    
     
