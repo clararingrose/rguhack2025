@@ -3,49 +3,55 @@
     "Name": "ABZWorks",
     "Logo": "assets/images/abz-works-open-graph.png",
     "Description": "ABZ Works is a service available to Aberdeen residents who are looking for support to develop confidence, knowledge, skills or experience so they can work towards achieving their goals of progressing into employment, education or training. We deliver a range of employability programmes for those aged between 16 and 67, supporting people from all walks of life and at all stages of their working life. We also provide a range of redundancy advice and support.",
-    "PhoneNumber": "",
+    "PhoneNumber": "01224 346100",
+    "Email": "abzworks@aberdeencity.gov.uk",
     "URL": "https://abzworks.co.uk/",
-    "category": "Employment"
+    "category": ["Employment", "Finance"]
   },
   {
     "Name": "SAMH Information Service",
     "Logo": "assets/images/samh.png",
     "Description": "Whether you’re seeking support, are looking for more information for you or someone you love, or if you just want to have chat about mental health, we’re here to help. You can also speak to an advisor through our Live Web Chat which will pop up when an advisor is available.Available: 9am to 6pm, Monday to Friday",
     "PhoneNumber": "0344 800 0550",
+    "Email": "info@samh.org.uk",
     "URL": "samh.org.uk/informationservice",
-    "category": "Health"
+    "category": ["Health"]
   },
   {
     "Name": "Citizens Advice Scotland",
     "Logo": "assets/images/cas.png",
     "Description": "Claiming Universal Credit can involve several stages, and we're here to make them easier for you. We can help with:• Quick questions -answering queries as you make your own claim• Support to submit your claim - such as advice on how to set up email and bank accounts if needed, and working through claim ‘to\u0002dos’• Support to first payment - helping you apply for additional financial support and prepare for work coach appointments• Evidence checking -making sure all your claim evidence is correct",
-    "PhoneNumber": "Telephone: Our Help to Claim helpline number is: 0800 023 2581. Please note, our helpline is open Monday to Friday, 8am-6pm. Calls to this number are free.",
+    "PhoneNumber": "0800 023 2581",
+    "Email": "None",
     "URL": "https://www.bing.com/search?q=Citizens+Advice+Scotland&cvid=4b287fca17b04131815eace585f1a6d1&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOTIGCAEQABhAMgYIAhAAGEAyBggDEAAYQDIGCAQQABhAMgYIBRAAGEAyBggGEAAYQDIGCAcQABhAMgYICBAAGEDSAQc2MDZqMGo0qAICsAIB&FORM=ANAB01&PC=NMTS",
-    "category": "Finance"
+    "category": ["Finance"]
   },
   {
     "Name": "Breathing Space",
     "Logo": "assets/images/breathingspace.png",
     "Description": "A confidential out of office hours telephone line for people over 16 experiencing low mood, anxiety or depression.",
     "PhoneNumber": "0800 83 85 87",
+    "Email": "None",
     "URL": "https://www.breathingspace.scot/",
-    "category": "Health"
+    "category": ["Health"]
   },
   {
     "Name": "Scottish Welfare Fund",
     "Logo": "assets/images/swf.png",
     "Description": "The Scottish Welfare Fund provides financial support if you are facing a crisis or need help to live in the community. This is normally in the form of a one-off grant to help with living costs. The fund does not cover ongoing expenses.You do not need to pay the money back.There are two kinds of grants.• Crisis grants - to help meet immediate needs after an emergency or disaster. For example you can apply for things like food, heating costs, nappies, toiletries and travel.• Community care grants - to help people to settle in a new home, when moving from an \"unsettled way of life\" (for example hospital, prison or a homeless accommodation unit). They can also support families who are facing exceptional pressure. For example you can apply for things like furniture or carpets.We award grants based on your situation. We only receive a limited amount of money from the Government each year, so we can only provide small grants. We normally cannot give you more than 3 grants in any 12 month period unless there are exceptional circumstances.",
-    "PhoneNumber": "0800 03 04 713, from 9am to 5pm",
-    "URL": "https://lwa.financialassessments.co.uk/localwelfareassistance/Home/ErrorPage/?aspxerrorpath=/OnlineApplication/Introduction.aspx",
-    "category": "Finance"
+    "PhoneNumber": "0800 03 04 713",
+    "Email": "scottishwelfarefund@aberdeencity.gov.uk",
+    "URL": "https://www.aberdeencity.gov.uk/services/benefits-and-advice/apply-scottish-welfare-fund",
+    "category": ["Finance"]
   },
   {
     "Name": "Scottish Centre for Conflict Resolution",
     "Logo": "assets/images/sccr.jpg",
-    "Description": "If you're a young person experiencing conflict at home, we're here for you.Online resources.",
-    "PhoneNumber": "",
+    "Description": "If you're a young person experiencing conflict at home, we're here for you. Online resources.",
+    "PhoneNumber": "0131 475 2493",
+    "Email": "sccr@cyrenians.scot",
     "URL": "https://www.scottishconflictresolution.org.uk/young-people",
-    "category": "Abuse"
+    "category": ["Abuse", "Health"]
   },
   {
     "Name": "Scotland's Domestic Abuse Helpline",
@@ -54,7 +60,7 @@
     "PhoneNumber": "0800 027 1234",
     "Email": "helpline@sdafmh.org.uk",
     "URL": "https://www.sdafmh.org.uk/",
-    "category":"Abuse"
+    "category": ["Abuse"]
   },
   {
     "Name": "Aberdeen City Council Domestic Abuse Team",
@@ -63,6 +69,6 @@
     "PhoneNumber": "0800 030 4713",
     "Email": "domesticabuseteam@aberdeencity.gov.uk",
     "URL": "https://www.aberdeencity.gov.uk/domestic-abuse-support",
-    "category":"Abuse"
+    "category": ["Abuse"]
   }
 ]

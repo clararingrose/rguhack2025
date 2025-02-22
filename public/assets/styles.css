@@ -119,6 +119,17 @@ body {
 
 }
 
+#links{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  border-radius: 20px;
+  display: none;
+
+}
+#Mentioned{
+  color: white;
+}
+
 
 * {box-sizing:border-box}
 
