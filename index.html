@@ -6,6 +6,7 @@
             Aberdeen City Council
         </title>
         <link rel="stylesheet" href="assets/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <style>
             #conversation {
@@ -16,6 +17,7 @@
 
             }
         </style> 
+        <script type="text/javascript" src="assets/scripts/responsive.js"></script>
         <script type = "text/javascript">src="openai.js"</script>
         <script>
             function getInput(){
@@ -33,16 +35,18 @@
         <header>
             <img src="assets/images/acc_logo.jpg" id="acclogo">
             <h1>Aberdeen City Council</h1>
-            <nav>
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Housing</a></li>
-                    <li><a href="">Finance</a></li>
-                    <li><a href="">Health</a></li>
-                    <li><a href="">Employment</a></li>
-                    <li><a href="">Domestic Abuse</a></li>
-                </ul>
-            </nav>
+
+            <div class="nav" id="navBar">
+                <a href="#">Home</a>
+                <a href="">Housing</a>
+                <a href="">Finance</a>
+                <a href="">Health</a>
+                <a href="">Employment</a>
+                <a href="">Domestic Abuse</a>
+                <a href="javascript:void(0);" class="icon" onclick="resizeNavBar()">
+                  <i class="fa fa-bars"></i>
+                </a>
+              </div>
         </header>
 
         <div id="item1">
