@@ -7,6 +7,10 @@ body {
   font-family:Arial, Helvetica, sans-serif;
 }
 
+#llm {
+  text-align: center;
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #412a45;
