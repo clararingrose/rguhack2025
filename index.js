@@ -24,20 +24,24 @@ app.get('/abuse', async function(req, res){
     res.render('pages/abuse', {resources: abuseResources});
 });
 
-app.get('/employment', function(req, res){
-    res.render('pages/employment', {resources: filterJSON('Employment')});
+app.get('/employment', async function(req, res){
+    const employmentResources = await filterJSON('Employment');
+    res.render('pages/employment', {resources: employmentResources});
 });
 
-app.get('/finance', function(req, res){
-    res.render('pages/finance', {resources: filterJSON('Finance')});
+app.get('/finance', async function(req, res){
+    const financeResources = await filterJSON('Finance');
+    res.render('pages/finance', {resources: financeResources});
 });
 
-app.get('/health', function(req, res){
-    res.render('pages/health', {resources: filterJSON('Health')});
+app.get('/health', async function(req, res){
+    const healthResources = await filterJSON('Health');
+    res.render('pages/health', {resources: healthResources});
 });
 
-app.get('/housing', function(req, res){
-    res.render('pages/housing', {resources: filterJSON('Housing')});
+app.get('/housing', async function(req, res){
+    const housingResources = await filterJSON('Housing');
+    res.render('pages/housing', {resources: housingResources});
 });
 
 app.post('/', async (req, res) => {
