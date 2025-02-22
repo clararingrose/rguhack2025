@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 const resourcesJSON = require('./mostHingedJSON.json')
 
 async function filterJSON(categoryPASSED){
-    return resourcesJSON.filter(resource => resource.category === categoryPASSED);
+    return resourcesJSON.filter(resource => resource.category.includes(categoryPASSED));
 }
 
 app.get('/abuse', async function(req, res){

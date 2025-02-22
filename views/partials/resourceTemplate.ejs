@@ -1,6 +1,11 @@
 <% resources.forEach(resource => { %>
     <div>
-      <p><strong>Name:</strong> <%= resource.Name %></p>
-      
+      <p><%= resource.Name %></p>
+      <img src="<%= resource.Logo %>">
+      <p> <%= resource.Description %></p>
+      <p> <%= resource.PhoneNumber %></p>
+      <p> <%= resource.Email %></p>
+      <p> <%= resource.Url %></p>
+
     </div>
   <% }) %>
