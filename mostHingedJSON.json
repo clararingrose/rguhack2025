@@ -1,0 +1,44 @@
+[
+  {
+    "Name": "ABZWorks",
+    "Logo": "assets/images/abz-works-open-graph.png",
+    "Description": "ABZ Works is a service \navailable to Aberdeen \nresidents who are looking for \nsupport to develop \nconfidence, knowledge, \nskills or experience so they \ncan work towards achieving \ntheir goals of progressing \ninto employment, education \nor training. We deliver a range of \nemployability programmes \nfor those aged between 16 \nand 67, supporting people \nfrom all walks of life and at \nall stages of their working \nlife. We also provide a range \nof redundancy advice and \nsupport.",
+    "PhoneNumber": "",
+    "URL": "https://abzworks.co.uk/"
+  },
+  {
+    "Name": "SAMH Information Service",
+    "Logo": "assets/images/samh.png",
+    "Description": "Whether you’re seeking support, are \nlooking for more information for you or \nsomeone you love, or if you just want to \nhave chat about mental health, we’re \nhere to help. You can also speak to an \nadvisor through our Live Web \nChat which will pop up when an \nadvisor is available.\nAvailable: 9am to 6pm, Monday to \nFriday",
+    "PhoneNumber": "0344 800 0550",
+    "URL": "samh.org.uk/informationservice"
+  },
+  {
+    "Name": "Citizens Advice Scotland",
+    "Logo": "assets/images/cas.png",
+    "Description": "Claiming Universal Credit \ncan involve several stages, \nand we're here to make them \neasier for you. We can help \nwith:\n• Quick questions -\nanswering queries as \nyou make your own \nclaim\n• Support to submit \nyour claim - such as \nadvice on how to set \nup email and bank \naccounts if \nneeded, and working \nthrough claim ‘to\u0002dos’\n• Support to first \npayment - helping \nyou apply for \nadditional financial \nsupport and prepare \nfor work coach \nappointments\n• Evidence checking -\nmaking sure all your \nclaim evidence is \ncorrect",
+    "PhoneNumber": "Telephone: Our Help \nto Claim helpline \nnumber is: 0800 023 \n2581. Please note, \nour helpline is open \nMonday to Friday, \n8am-6pm. Calls to \nthis number are free.",
+    "URL": "https://www.bing.com/search?q=Citizens+Advice+Scotland&cvid=4b287fca17b04131815eace585f1a6d1&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOTIGCAEQABhAMgYIAhAAGEAyBggDEAAYQDIGCAQQABhAMgYIBRAAGEAyBggGEAAYQDIGCAcQABhAMgYICBAAGEDSAQc2MDZqMGo0qAICsAIB&FORM=ANAB01&PC=NMTS"
+  },
+  {
+    "Name": "Breathing Space",
+    "Logo": "assets/images/breathingspace.png",
+    "Description": "A confidential out of office hours \ntelephone line for people over 16 \nexperiencing low mood, anxiety or \ndepression.",
+    "PhoneNumber": "0800 83 85 87",
+    "URL": "https://www.breathingspace.scot/"
+  },
+  {
+    "Name": "Scottish Welfare Fund",
+    "Logo": "assets/images/swf.png",
+    "Description": "The Scottish Welfare Fund \nprovides financial support if \nyou are facing a crisis or \nneed help to live in the \ncommunity. This is normally \nin the form of a one-off \ngrant to help with living \ncosts. The fund does not \ncover ongoing expenses.\nYou do not need to pay the \nmoney back.\nThere are two kinds of grants.\n• Crisis grants - to help \nmeet immediate \nneeds after an \nemergency or \ndisaster. For example \nyou can apply for \nthings like food, \nheating costs, nappies, toiletries \nand travel.\n• Community care \ngrants - to help \npeople to settle in a \nnew home, when \nmoving from an \n\"unsettled way of \nlife\" (for example \nhospital, prison or a \nhomeless \naccommodation \nunit). They can also \nsupport families who \nare facing \nexceptional pressure. \nFor example you can \napply for things like \nfurniture or carpets.\nWe award grants based on \nyour situation. We only \nreceive a limited amount of \nmoney from the Government \neach year, so we can only \nprovide small grants. We \nnormally cannot give you \nmore than 3 grants in any 12 \nmonth period unless there \nare exceptional \ncircumstances.",
+    "PhoneNumber": "0800 03 04 \n713, from 9am to 5pm",
+    "URL": "https://lwa.financialassessments.co.uk/localwelfareassistance/Home/ErrorPage/?aspxerrorpath=/OnlineApplication/Introduction.aspx"
+  },
+  {
+    "Name": "Scottish Centre for Conflict \nResolution",
+    "Logo": "assets/images/sccr.jpg",
+    "Description": "If you're a young person experiencing \nconflict at home, we're here for you.\nOnline resources.",
+    "PhoneNumber": "",
+    "URL": "https://www.scottishconflictresolution.org.uk/young-people"
+  }
+]
