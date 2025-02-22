@@ -16,28 +16,28 @@ app.use(bodyParser.json());
 const resourcesJSON = require('./mostHingedJSON.json')
 
 async function filterJSON(categoryPASSED){
-    return resourcesJSON.filter(resourcesJSON => resourcesJSON.category === categoryPASSED);
+    return resourcesJSON.filter(resource => resource.category === categoryPASSED);
 }
 
-app.get('/abuse', function(req, res){
-
-    res.render('pages/abuse', {resources: filterJSON('Abuse')});
+app.get('/abuse', async function(req, res){
+    const abuseResources = await filterJSON('Abuse');
+    res.render('pages/abuse', {resources: abuseResources});
 });
 
 app.get('/employment', function(req, res){
-    res.render('pages/employment');
+    res.render('pages/employment', {resources: filterJSON('Employment')});
 });
 
 app.get('/finance', function(req, res){
-    res.render('pages/finance');
+    res.render('pages/finance', {resources: filterJSON('Finance')});
 });
 
 app.get('/health', function(req, res){
-    res.render('pages/health');
+    res.render('pages/health', {resources: filterJSON('Health')});
 });
 
 app.get('/housing', function(req, res){
-    res.render('pages/housing');
+    res.render('pages/housing', {resources: filterJSON('Housing')});
 });
 
 app.post('/', async (req, res) => {

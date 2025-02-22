@@ -1,8 +1,6 @@
-<div>
-    <h2>name prolly</h2>
-    <img>
-
-    <p>desciption</p>
-
-    <p>contact info</p>
-</div>
+<% resources.forEach(resource => { %>
+    <div>
+      <p><strong>Name:</strong> <%= resource.Name %></p>
+      
+    </div>
+  <% }) %>
