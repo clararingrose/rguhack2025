@@ -1,13 +1,17 @@
 var express = require('express');
 const path = require('path');
 var app = express();
+const bodyParser = require('body-parser');
 app.use(express.static('public'));
+
 
 
 app.get('/', function(req, res){
 //  res.send("Hello world! by express");
  res.sendFile(path.join(__dirname, '/index.html'));
 });
+app.use(bodyParser.json());
+
 
 //routing class pages
 app.set('view engine', 'ejs')
@@ -16,12 +20,18 @@ app.get('/abuse', function(req, res){
  res.render('pages/abuse');
 });
 
-app.post('/', async(req, res) => {
+app.post('/', async (req, res) => {
+    console.log(req.body);
+    const prompt = req.body.prompt;
 
-    const {prompt} = req.body;
-    callOpenAI(prompt)
-
-})
+    try {
+        const response = await callOpenAI(prompt);
+        res.json({ response: response});
+    } catch (error) {
+        console.error('Error calling OpenAI:', error);
+        res.status(500).json({ error: 'Failed to get response from OpenAI' });
+    }
+});
 app.listen(8080, function () {
     console.log('Listening on http://localhost:8080/');
 });
