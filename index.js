@@ -13,9 +13,15 @@ app.get('/', function(req, res){
 });
 app.use(bodyParser.json());
 
+const resourcesJSON = require('./mostHingedJSON.json')
+
+async function filterJSON(categoryPASSED){
+    return resourcesJSON.filter(resourcesJSON => resourcesJSON.category === categoryPASSED);
+}
 
 app.get('/abuse', function(req, res){
-    res.render('pages/abuse');
+
+    res.render('pages/abuse', {resources: filterJSON('Abuse')});
 });
 
 app.get('/employment', function(req, res){
