@@ -1,8 +1,8 @@
 // const axios = require('axios');
-const apiKey = process.env.OPENAI_API_KEY;
 
 
 async function callOpenAI(prompt) {
+    const apiKey = process.env.OPENAI_API_KEY;
     const url = 'https://api.openai.com/v1/chat/completions';
     alert("calling api")
     const response = await axios.post(url, {

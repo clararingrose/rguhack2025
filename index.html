@@ -16,8 +16,36 @@
 
                 }
             </style> 
-            <script type = "application/javascript" src="openai.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+            <!-- <script type = "application/javascript" src="openai.js"></script> -->
+            <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+             <script>
+                        
+async function getInput(){
+    input = document.getElementById("input").value;
+    conversation = document.getElementById("conversation")
+    conversation.value += input
+
+    try {
+                const response = await fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ prompt: input })
+                });
+
+                const data = await response.json();
+                conversation.value += `AI: ${data.response}\n`;
+            } catch (error) {
+                console.error("Error:", error);
+            }
+
+    // response = callOpenAI(input)
+    // conversation.value += response
+    document.getElementById("input").value = "";
+
+}
+
+
+             </script>
 
         </head>
         <body>

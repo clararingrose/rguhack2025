@@ -9,6 +9,12 @@ app.get('/', function(req, res){
  res.sendFile(path.join(__dirname, '/index.html'));
 });
 
+app.post('/', async(req, res) => {
+
+    const {prompt} = req.body;
+    callOpenAI(prompt)
+
+})
 app.listen(8080, function () {
     console.log('Listening on http://localhost:8080/');
 });
@@ -20,7 +26,6 @@ const apiKey = process.env.OPENAI_API_KEY;
 
 async function callOpenAI(prompt) {
     const url = 'https://api.openai.com/v1/chat/completions';
-    alert("calling api")
     const response = await axios.post(url, {
         model: 'gpt-4o-mini',
         messages: [{ role: 'user', content: prompt }],
@@ -38,13 +43,3 @@ async function callOpenAI(prompt) {
 
 module.exports = callOpenAI;
 
-        
-function getInput(){
-    input = document.getElementById("input").value;
-    conversation = document.getElementById("conversation")
-    conversation.value += input
-    response = callOpenAI(input)
-    conversation.value += response
-    
-
-}
