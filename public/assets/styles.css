@@ -87,7 +87,7 @@ body {
   height: 350px;
   font-family: 'Times New Roman', Times, serif;
   font-size: large;
-  
+  border-radius: 20px;
 
 
 }
@@ -95,4 +95,6 @@ body {
   width:60%;
   font-family: 'Times New Roman', Times, serif;
   font-size: large;
+  border-radius: 20px;
+
 }
