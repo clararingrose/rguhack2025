@@ -19,6 +19,40 @@
             <script type = "application/javascript" src="openai.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+            <script>
+                async function getInput() {
+    const input = document.getElementById("input").value;
+    const conversation = document.getElementById("conversation");
+
+    if (!input) {
+        alert("Please enter a message.");
+        return;
+    }
+
+    conversation.value += `You: ${input}\n`;
+
+    try {
+        const response = await fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ prompt: input })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        conversation.value += `AI: ${data.response}\n`;
+    } catch (error) {
+        console.error("Error:", error);
+        conversation.value += `Error: ${error.message}\n`;
+    }
+
+    document.getElementById("input").value = "";
+}
+
+            </script>
         </head>
         <body>
             <header>
