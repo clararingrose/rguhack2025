@@ -9,6 +9,9 @@ body {
 
 #llm {
   text-align: center;
+  border: 2px solid black;
+  margin: 40px;
+  border-radius: 20px;
 }
 
 /* Add a black background color to the top navigation */
@@ -106,7 +109,8 @@ body {
   font-family: 'Times New Roman', Times, serif;
   font-size: large;
   border-radius: 20px;
-
+  border-color: white;
+  background-color: #bbb;
 }
 #input{
 /*     
