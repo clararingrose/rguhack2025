@@ -74,7 +74,7 @@
                         const response = await fetch("/", {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({ prompt: "give me a brief overview of " + topic }, {role: role})
+                            body: JSON.stringify({ prompt: "give me a brief overview of " + topic }, {role: "user"})
                         });
 
                         if (!response.ok) {
