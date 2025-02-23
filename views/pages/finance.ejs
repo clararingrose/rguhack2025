@@ -4,16 +4,11 @@
         <%- include('../partials/head') %> 
     </head>
 
-    <body>
-        <header>
-            <%- include('../partials/header') %> 
-        </header>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
 
-        <h1>Finance</h1>
-        <ul>
-            <li>Citizen's Advice Scotland</li>
-            <li>ABZWorks</li>
-            <li>Scottish Welfare Fund</li>
-        </ul>
+    <body>
+        <%- include('../partials/resourceTemplate.ejs', {resources: resources}) %>
     </body>
 </html>

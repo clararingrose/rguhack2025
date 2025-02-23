@@ -9,6 +9,9 @@ body {
 
 #llm {
   text-align: center;
+  border: 2px solid black;
+  margin: 40px;
+  border-radius: 20px;
 }
 
 /* Add a black background color to the top navigation */
@@ -71,7 +74,7 @@ body {
     padding-right: 1em;
   }
 
-  #conversation, #input {
+  #conversation, #input, #links {
     width:100%
   }
 }
@@ -81,7 +84,7 @@ body {
     padding-left: 1em;
     padding-right: 1em;
   }
-  #conversation, #input {
+  #conversation, #input, #links {
     width:75%
   }
 }
@@ -92,7 +95,7 @@ body {
     padding-right: 1em;
     margin:auto;
   }
-  #conversation, #input {
+  #conversation, #input, #links {
     width:60%
   }
 }
@@ -106,7 +109,7 @@ body {
   font-family: 'Times New Roman', Times, serif;
   font-size: large;
   border-radius: 20px;
-
+  border-color: white;
 }
 #input{
 /*     
@@ -116,7 +119,7 @@ body {
   font-family: 'Times New Roman', Times, serif;
   font-size: large;
   border-radius: 20px;
-
+  
 }
 
 #links{
@@ -124,6 +127,7 @@ body {
   font-size: large;
   border-radius: 20px;
   display: none;
+  height:200px;
 
 }
 #Mentioned{

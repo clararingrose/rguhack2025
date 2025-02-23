@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 const resourcesJSON = require('./mostHingedJSON.json')
 
 async function filterJSON(categoryPASSED){
-    return resourcesJSON.filter(resource => resource.category === categoryPASSED);
+    return resourcesJSON.filter(resource => resource.category.includes(categoryPASSED));
 }
 
 app.get('/abuse', async function(req, res){
@@ -24,20 +24,24 @@ app.get('/abuse', async function(req, res){
     res.render('pages/abuse', {resources: abuseResources});
 });
 
-app.get('/employment', function(req, res){
-    res.render('pages/employment', {resources: filterJSON('Employment')});
+app.get('/employment', async function(req, res){
+    const employmentResources = await filterJSON('Employment');
+    res.render('pages/employment', {resources: employmentResources});
 });
 
-app.get('/finance', function(req, res){
-    res.render('pages/finance', {resources: filterJSON('Finance')});
+app.get('/finance', async function(req, res){
+    const financeResources = await filterJSON('Finance');
+    res.render('pages/finance', {resources: financeResources});
 });
 
-app.get('/health', function(req, res){
-    res.render('pages/health', {resources: filterJSON('Health')});
+app.get('/health', async function(req, res){
+    const healthResources = await filterJSON('Health');
+    res.render('pages/health', {resources: healthResources});
 });
 
-app.get('/housing', function(req, res){
-    res.render('pages/housing', {resources: filterJSON('Housing')});
+app.get('/housing', async function(req, res){
+    const housingResources = await filterJSON('Housing');
+    res.render('pages/housing', {resources: housingResources});
 });
 
 app.post('/', async (req, res) => {
@@ -75,7 +79,6 @@ async function callOpenAI(prompt) {
     const response = await axios.post(url, {
         model: 'gpt-4o-mini',
         messages: [{role: 'system', content: "you are an assistant who focuses on homelessness. If the user specifies that they work in a service such as the police, or the local council, try help them redirect someone to the appropriate resources. if they dont, assume they are a vulnerable person themselves. Only refer to organisations that i mention. your goal is to assist the end user with finding valid information to the aberdeen area.DO NOT REFER TO ANY SITES OR SERVICES WHICH ARE NOT SPECIFIED IN THIS PROMPT. if the user mentions financial issues, you should refer to the citizens advice data, and the scottish welfare fund data. if they mention anything mental health related, all information should be derived from the breathing space data or the samh data, if the user mentions eployment you must refer to the abzworks data. here is the citizens advice data" + citAdvice + " heres the breathing space data: " + breathingSpace1 + "  " + breathingSpace2 + "here is the samh data:" + samh +  " heres the abzworks data " + abz + " and herre is the scottish welfare fund data: " + swf + " If the user if a young person with a conflict at home, you should redirect them to scottishconflictresolution, specifically this segment of their site: sk Andy After you submit a question we will get back in touch by email straight away. If you provide permission we may also post the question and answer anonymously in the Community Discussion part of the website to help others who may be in a similar situation. This service is confidential and we will not pass on your email address to anyone."}, 
-            // {role: 'citizens advice', content: ""},
             { role: 'user', content: prompt }],
         temperature: 0.7
     }, {
