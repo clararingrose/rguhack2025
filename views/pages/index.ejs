@@ -69,6 +69,9 @@
 
                 async function getSummary(){
                     const topic = document.getElementById("topic")
+                    const conversation = document.getElementById("conversation");
+
+                    conversation.value += "You: give me a brief overview of " + topic +  "\n";
 
                     try {
                         const response = await fetch("/", {
@@ -80,6 +83,8 @@
                         if (!response.ok) {
                             throw new Error(`HTTP error! status: ${response.status}`);
                         }
+                        conversation.value += `AI: ${data.response}\n`;
+
                     } catch (error) {
                         console.error("Error:", error);
                         conversation.value += `Error: ${error.message}\n`;
