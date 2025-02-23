@@ -36,6 +36,9 @@
                         conversation.value += `AI: ${data.response}\n`;
                         links = document.getElementById("links")
                         links.style.display = 'block';
+                        links.style.marginLeft = "auto";
+                        links.style.marginRight = "auto";
+
 
                         document.getElementById("Mentioned").style.color = 'black';
                         if(data.response.toLowerCase().includes("breathing space") && !(links.value.toLowerCase().includes("breathing space"))){
@@ -95,8 +98,16 @@
                         links = document.getElementById("links")
                         
                         links.style.display = 'block';
+                        // links.style.textAlign = center;
+
 
                         document.getElementById("Mentioned").style.color = 'black';
+                        
+                        links.style.marginLeft = "auto";
+                        links.style.marginRight = "auto";
+
+
+                        
                         
                         if(data.response.toLowerCase().includes("breathing space") && !(links.value.toLowerCase().includes("breathing space"))){
                             links.value += "Breathing Space: https://www.breathingspace.scot/ \n"
