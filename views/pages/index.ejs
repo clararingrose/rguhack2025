@@ -83,6 +83,8 @@
                         if (!response.ok) {
                             throw new Error(`HTTP error! status: ${response.status}`);
                         }
+                        const data = await response.json();
+
                         conversation.value += `AI: ${data.response}\n`;
 
                     } catch (error) {
@@ -143,7 +145,6 @@
 
                 <h3>or choose a topic below to get a brief overview</h3>
                 <select name="topic" id="topic">
-                    <option value="Housing">Housing</option>
                     <option value="Finance">Finance</option>
                     <option value="Health">Health</option>
                     <option value="Employment">Employment</option>
