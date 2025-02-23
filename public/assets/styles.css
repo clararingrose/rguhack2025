@@ -5,7 +5,7 @@
 
 body {
   font-family:Arial, Helvetica, sans-serif;
-  background-color: #DDD7FD;
+  background-color: #f2f2f2;
   color: #412a45;
 }
 
@@ -14,6 +14,26 @@ body {
   border: 2px solid black;
   margin: 40px;
   border-radius: 20px;
+  background-color: #DDD7FD;
+}
+
+#llm button{
+  background-color: #412a45;
+  color: white;
+  padding:5px 10px;
+  border-radius: 5px;
+}
+
+#llm select{
+  padding:5px 10px;
+}
+
+#llm h3{
+  padding-bottom: 10px;
+}
+
+#llm h2{
+  padding-top: 10px;
 }
 
 /* Add a black background color to the top navigation */
