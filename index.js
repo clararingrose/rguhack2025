@@ -48,7 +48,7 @@ app.post('/', async (req, res) => {
     console.log(req.body);
     const prompt = req.body.prompt;
     const role = req.body.role;
-
+    
     try {
         const response = await callOpenAI(prompt, role);
         res.json({ response: response});
