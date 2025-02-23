@@ -64,11 +64,74 @@
   },
   {
     "Name": "Aberdeen City Council Domestic Abuse Team",
-    "Logo": "",
+    "Logo": "assets/images/acc_logo.jpg",
     "Description": "The Domestic Abuse Team is a voluntary service which provides short to medium term support and advice to victims of domestic abuse to help them address the effects the behaviour of their partner/ex-partner has had on them. We can support individuals with safety planning in order to reduce risk as well as practical and emotional support.",
     "PhoneNumber": "0800 030 4713",
     "Email": "domesticabuseteam@aberdeencity.gov.uk",
     "URL": "https://www.aberdeencity.gov.uk/domestic-abuse-support",
+    "category": ["Abuse"]
+  },
+  {
+    "Name": "Grampian Women's Aid",
+    "Logo": "https://www.grampian-womens-aid.com/themes/grampian-womens-aid/images/logo.svg",
+    "Description": "Free, confidential specialist service to women, children and young people in Aberdeen and Aberdeenshire who have experienced domestic abuse.",
+    "PhoneNumber": "01224 593381",
+    "Email": "info@grampian-womensaid.com",
+    "URL": "https://www.grampian-womens-aid.com/",
+    "category": ["Abuse"]
+  },
+  {
+    "Name": "Aberdeen Cyrenians Violence Against Women (VAW)",
+    "Logo": "https://images.squarespace-cdn.com/content/v1/610cfa1cfb3b2159276af48b/7662027b-45db-4f5a-8573-38aab1aac2f1/Aberdeen_Cyrenians_Logo_RGB_SkyBlue_RGB_SkyBlue.png",
+    "Description": "Offers support to women who are currently experiencing violence or abuse. They can provide 1:1 support as well as a 12-week Women’s Group programme,  providing a safe, friendly space for women to meet others as a way of increasing confidence, improving social skills and befriending support.",
+    "PhoneNumber": "0300 303 0903 option 4",
+    "Email": "evaa@weareac.org",
+    "URL": "https://www.weareac.org/evaa",
+    "category": ["Abuse"]
+  },
+  {
+    "Name": "Abused Men in Scotland (AMIS)",
+    "Logo": "https://abusedmeninscotland.org/wp-content/uploads/logo.png",
+    "Description": "Service for Men over 16 suffering domestic abuse",
+    "PhoneNumber": "0808 800 0024",
+    "Email": "support@amis.org.uk",
+    "URL": "https://abusedmeninscotland.org/",
+    "category": ["Abuse"]
+  },
+  {
+    "Name": "Shelter Scotland",
+    "Logo": "https://images.ctfassets.net/6sqqfrl11sfj/4keA5DmpZZv4pQWyqupYMA/9fb22f1458d4b818a0e2e572c9c39408/red_roof_logo_v6.png",
+    "Description": "Shelter Scotland provides advice, support and legal services.",
+    "PhoneNumber": "0808 800 4444",
+    "Email": "",
+    "URL": "https://scotland.shelter.org.uk/",
+    "category": ["Housing"]
+  },
+  {
+    "Name": "Aberdeen Cyrenians Domestic Abuse Support and Accommodation Project (DASAP)",
+    "Logo": "https://images.squarespace-cdn.com/content/v1/610cfa1cfb3b2159276af48b/7662027b-45db-4f5a-8573-38aab1aac2f1/Aberdeen_Cyrenians_Logo_RGB_SkyBlue_RGB_SkyBlue.png",
+    "Description": "For women, men and families who are experiencing domestic abuse",
+    "PhoneNumber": "None",
+    "Email": "None",
+    "URL": "https://www.weareac.org/care-services",
+    "category": ["Abuse"]
+  },
+  {
+    "Name": "Instant Neighbour",
+    "Logo": "https://www.instantneighbour.co.uk/wp-content/uploads/2024/11/40thLogo.jpg",
+    "Description": "Instant Neighbour has been supporting people in Aberdeen City and Shire for the last 40 years.  We support people on low incomes to set up home, by providing access to low-cost reuse furniture, white goods, clothing and bric a brac.  As well as our shops, our services include Carpetinc and Joinerinc, professional services that are accessible to everyone to use. We offer employability experiences through volunteering in our shops, warehouse, in our vans and in our office.",
+    "PhoneNumber": "01224 489955",
+    "Email": "reception@instantneighbour.co.uk",
+    "URL": "https://www.instantneighbour.co.uk/",
+    "category": ["Housing"]
+  },
+  {
+    "Name": "",
+    "Logo": "",
+    "Description": "",
+    "PhoneNumber": "",
+    "Email": "",
+    "URL": "",
     "category": ["Abuse"]
   }
 ]

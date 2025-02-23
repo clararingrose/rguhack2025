@@ -47,9 +47,10 @@ app.get('/housing', async function(req, res){
 app.post('/', async (req, res) => {
     console.log(req.body);
     const prompt = req.body.prompt;
+    const role = req.body.role;
 
     try {
-        const response = await callOpenAI(prompt);
+        const response = await callOpenAI(prompt, role);
         res.json({ response: response});
     } catch (error) {
         console.error('Error calling OpenAI:', error);
@@ -65,7 +66,7 @@ const axios = require('axios');
 const apiKey = process.env.OPENAI_API_KEY;
 
 
-async function callOpenAI(prompt) {
+async function callOpenAI(prompt, role) {
     const url = 'https://api.openai.com/v1/chat/completions';
     citAdvice = "Help to Claim Universal Credit If you are thinking about making a Universal Credit claim or are in the process of making a claim, we can help. Whether you're looking for answers to quick questions or step-by-step support to make your claim, our trained advisers can guide you through the process all the way to your first full and correct payment.  What is Universal Credit? Universal Credit is a government benefit payment designed to help with living costs. It's paid monthly (or twice a month for some people in Scotland), and it can be paid to people on a low income or who are out of work.  Universal Credit replaces: Housing Benefit; income-related Employment and Support Allowance (ESA); income-based Jobseeker's Allowance (JSA); Child Tax Credit; Working Tax Credit; and Income Support. The government are in the process of phasing out these six benefits and moving all claimants onto Universal Credit. You may have received a letter from DWP regarding this, this is called Managed Migration.  If you receive benefits and have been sent a letter telling you to claim Universal Credit, our Advisers can help you with this process by phoning our helpline on 0800 0232581, or by accessing our webchat service below. There are several stages involved in claiming Universal Credit, and usually it must be claimed online.  How we can help Claiming Universal Credit can involve several stages, and we're here to make them easier for you. We can help with: Quick questions - answering queries as you make your own claim Support to submit your claim - such as advice on how to set up email and bank accounts if needed, and working through claim ‘to-dos’ Support to first payment - helping you apply for additional financial support and prepare for work coach appointments Evidence checking - making sure all your claim evidence is correct Get in touch You can contact our Help to Claim advisers via telephone, webchat and we also offer video calls. Telephone: Our Help to Claim helpline number is: 0800 023 2581. Please note, our helpline is open Monday to Friday, 8am-6pm. Calls to this number are free. If you would like to request a call back from one of our trained advisers, please fill out this form with your name, contact number as well as preferred time, and we will phone you within 2 working days. Please note, the call may come from an 0800 or withheld number. Phone: 0800 0232581. you can also request a callback from  cas.org.uk/helptoclaim."
     breathingSpace1 = "What happens when you call us? Speak to us in confidence One of our specialist advisors will answer your call. You can ask to speak to a man or a woman. Our advisors are here to listen. You only need to talk when you are ready. We can offer advice and, if appropriate, let you know about help in your local area for more specific problems. You may wish to have a pen and paper handy in case the advisor gives you details of phone numbers or addresses. If your call lasts for a while that’s okay. The advisor will only bring your call to an end on feeling that you have talked through your concerns sufficiently. If you feel you would benefit from speaking more, please call again another time. Our hope is that when you phone Breathing Space you will feel listened to and respected no matter why you contact us. Always feel free to let us know the quality of the service you received. Your views are always welcome and encouraged. Our staff will listen with compassion and respect to everyone who contacts us by phone or webchat. Breathing Space asks that when you contact the service you treat our staff in the same manner. We do not tolerate abusive language or behaviour during calls or chats."
@@ -74,22 +75,41 @@ async function callOpenAI(prompt) {
     samh = "Got a question about mental health? We can help. The SAMH Information Service provides information and support on mental health. Whether you’re seeking support, looking for more information for yourself or someone you love, or just want to have a chat about mental health, we’re here. Talk to the SAMH Information Team Here are ways you can talk to the SAMH Information Team: Live Web Chat* 0344 800 0550  info@samh.org.uk* Open 9am-6pm, Monday to Friday (except Scotland and Northern Ireland Bank Holidays). Calls charged at local rates, charges from mobile telephones vary considerably. If you need to speak to someone urgently, or require a listening or crisis service, please seek support here: www.samh.org.uk/about-mental-health/self-help-and-wellbeing/seeking-support. they also have a webchat available at https://www.samh.org.uk/informationservice"
     swf = "Apply to the Scottish Welfare Fund The Scottish Welfare Fund provides financial support if you are facing a crisis or need help to live in the community. This is normally in the form of a one-off grant to help with living costs. The fund does not cover ongoing expenses. You do not need to pay the money back. There are two kinds of grants. Crisis grants - to help meet immediate needs after an emergency or disaster. For example you can apply for things like food, heating costs, nappies, toiletries and travel. Community care grants - to help people to settle in a new home, when moving from an 'unsettled way of life' (for example hospital, prison or a homeless accommodation unit). They can also support families who are facing exceptional pressure. For example you can apply for things like furniture or carpets. We award grants based on your situation. We only receive a limited amount of money from the Government each year, so we can only provide small grants. We normally cannot give you more than 3 grants in any 12 month period unless there are exceptional circumstances.  Crisis and Community care grants Who can apply for a grant You can apply for a grant if you: are over 16 years old have a low income or do not have access to your money You can apply for a community care grant if you have savings of less than £700 (£1200 if you're over the age for pension credit). How to apply You can apply online at this link: https://lwa.financialassessments.co.uk/OnlineApplication/(S(of4urt1ieiwdrevpocnphmyf))/Introduction.aspx?form=LWAFULL&time=638758518284633236,1740255028859, https://www.aberdeencity.gov.uk/services/benefits-and-advice/apply-scottish-welfare-fund . You can also apply by calling the Scottish Welfare Fund application line on 0800 03 04 713, from 9am to 5pm.  We will ask you for proof of your identity and your circumstances. For this we will check the information held on our records and we may contact other organisations in connection with your circumstances. We will contact you if we need more information."
 
-
-
-    const response = await axios.post(url, {
-        model: 'gpt-4o-mini',
-        messages: [{role: 'system', content: "you are an assistant who focuses on homelessness. If the user specifies that they work in a service such as the police, or the local council, try help them redirect someone to the appropriate resources. if they dont, assume they are a vulnerable person themselves. Only refer to organisations that i mention. your goal is to assist the end user with finding valid information to the aberdeen area.DO NOT REFER TO ANY SITES OR SERVICES WHICH ARE NOT SPECIFIED IN THIS PROMPT. if the user mentions financial issues, you should refer to the citizens advice data, and the scottish welfare fund data. if they mention anything mental health related, all information should be derived from the breathing space data or the samh data, if the user mentions eployment you must refer to the abzworks data. here is the citizens advice data" + citAdvice + " heres the breathing space data: " + breathingSpace1 + "  " + breathingSpace2 + "here is the samh data:" + samh +  " heres the abzworks data " + abz + " and herre is the scottish welfare fund data: " + swf + " If the user if a young person with a conflict at home, you should redirect them to scottishconflictresolution, specifically this segment of their site: sk Andy After you submit a question we will get back in touch by email straight away. If you provide permission we may also post the question and answer anonymously in the Community Discussion part of the website to help others who may be in a similar situation. This service is confidential and we will not pass on your email address to anyone."}, 
-            { role: 'user', content: prompt }],
-        temperature: 0.7
-    }, {
-        headers: {
-            'Authorization': `Bearer ${apiKey}`,
-            'Content-Type': 'application/json'
-        }
-    });
-    console.log(response.data.choices[0].message.content)
+    if(role == "user"){
+        
+        
+        const response = await axios.post(url, {
+            model: 'gpt-4o-mini',
+            messages: [{role: 'system', content: "you are an assistant who focuses on homelessness. Only refer to organisations that i mention. your goal is to assist the end user with finding valid information to the aberdeen area. Your response should prioritise income; then mental health; then family; then jobs/education. DO NOT REFER TO ANY SITES OR SERVICES WHICH ARE NOT SPECIFIED IN THIS PROMPT. if the user mentions financial issues, you should refer to the citizens advice data, and the scottish welfare fund data. if they mention anything mental health related, all information should be derived from the breathing space data or the samh data, if the user mentions eployment you must refer to the abzworks data. here is the citizens advice data" + citAdvice + " heres the breathing space data: " + breathingSpace1 + "  " + breathingSpace2 + "here is the samh data:" + samh +  " heres the abzworks data " + abz + " and herre is the scottish welfare fund data: " + swf + " If the user if a young person with a conflict at home, you should redirect them to scottishconflictresolution, specifically this segment of their site: sk Andy After you submit a question we will get back in touch by email straight away. If you provide permission we may also post the question and answer anonymously in the Community Discussion part of the website to help others who may be in a similar situation. This service is confidential and we will not pass on your email address to anyone."}, 
+                { role: 'user', content: prompt }],
+                temperature: 0.7
+            }, {
+                headers: {
+                    'Authorization': `Bearer ${apiKey}`,
+                    'Content-Type': 'application/json'
+                }
+            });
+            console.log(response.data.choices[0].message.content)
     
     return response.data.choices[0].message.content;
+
+        }else{
+            const response = await axios.post(url, {
+                model: 'gpt-4o-mini',
+                messages: [{role: 'system', content: "you are an assistant who focuses on homelessness. The user is enquiring on behalf on someone they know, your answer should help them redirect the person they know. Only refer to organisations that i mention. your goal is to assist the end user with finding valid information to the aberdeen area. Your response should prioritise income; then mental health; then family; then jobs/education. DO NOT REFER TO ANY SITES OR SERVICES WHICH ARE NOT SPECIFIED IN THIS PROMPT. if the user mentions financial issues, you should refer to the citizens advice data, and the scottish welfare fund data. if they mention anything mental health related, all information should be derived from the breathing space data or the samh data, if the user mentions eployment you must refer to the abzworks data. here is the citizens advice data" + citAdvice + " heres the breathing space data: " + breathingSpace1 + "  " + breathingSpace2 + "here is the samh data:" + samh +  " heres the abzworks data " + abz + " and herre is the scottish welfare fund data: " + swf + " If the user if a young person with a conflict at home, you should redirect them to scottishconflictresolution, specifically this segment of their site: sk Andy After you submit a question we will get back in touch by email straight away. If you provide permission we may also post the question and answer anonymously in the Community Discussion part of the website to help others who may be in a similar situation. This service is confidential and we will not pass on your email address to anyone."}, 
+                    { role: 'user', content: prompt }],
+                    temperature: 0.7
+                }, {
+                    headers: {
+                        'Authorization': `Bearer ${apiKey}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                console.log(response.data.choices[0].message.content)
+                
+                return response.data.choices[0].message.content;
+            }
+            
 }
 
 module.exports = callOpenAI;
