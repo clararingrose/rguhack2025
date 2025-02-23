@@ -11,6 +11,8 @@
                     const input = document.getElementById("input").value;
                     const conversation = document.getElementById("conversation");
                     const role = document.getElementById("role").value;
+
+                    
                     console.log(JSON.stringify({ prompt: input, role: role})) //DO NOT REMOVE
 
                     if (!input) {
@@ -20,13 +22,15 @@
 
                     conversation.value += `You: ${input}\n`;
 
+                    console.log(JSON.stringify({ prompt: input, role: role})) //DO NOT REMOVE
                     try {
                         const response = await fetch("/", {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({ prompt: input }, {role: role})
-                        });
+                            body: JSON.stringify({ prompt: input, role: role})
 
+                        });
+                        console.log(response.body)
                         if (!response.ok) {
                             throw new Error(`HTTP error! status: ${response.status}`);
                         }
