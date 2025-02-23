@@ -71,13 +71,13 @@
                     const topic = document.getElementById("topic")
                     const conversation = document.getElementById("conversation");
 
-                    conversation.value += "You: give me a brief overview of " + topic +  "\n";
+                    conversation.value += "You: give me a brief overview of " + topic.value +  "\n";
 
                     try {
                         const response = await fetch("/", {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({ prompt: "give me a brief overview of " + topic }, {role: "user"})
+                            body: JSON.stringify({ prompt: "give me a brief overview of " + topic.value }, {role: "user"})
                         });
 
                         if (!response.ok) {
@@ -131,6 +131,7 @@
 
                 <h2>user input</h2>
                 <textarea id="input"></textarea>
+                <br><br>
 
                 <label for="role">Who are you asking for?</label>
                 <select name="role" id="role">
@@ -138,6 +139,7 @@
                     <option value="service">Someone you know</option>
                 </select>
                 <button id="sendbutton" onclick="getInput()">send</button>
+                <br><br>
 
                 <h3>or choose a topic below to get a brief overview</h3>
                 <select name="topic" id="topic">
@@ -146,7 +148,6 @@
                     <option value="Health">Health</option>
                     <option value="Employment">Employment</option>
                     <option value="Domestic Abuse">Domestic Abuse</option>
-
                 </select>
                 <button id="summaryButton" onclick="getSummary()">get summary</button>
 
