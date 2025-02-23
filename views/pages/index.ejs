@@ -67,6 +67,24 @@
                     document.getElementById("input").value = "";
                 }
 
+                async function getSummary(){
+                    const topic = document.getElementById("topic")
+
+                    try {
+                        const response = await fetch("/", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ prompt: "give me a brief overview of " + topic }, {role: role})
+                        });
+
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                    } catch (error) {
+                        console.error("Error:", error);
+                        conversation.value += `Error: ${error.message}\n`;
+                    }
+                }
                 let slideIndex = 1;
                 showSlides(slideIndex);
 
@@ -115,6 +133,19 @@
                     <option value="service">Someone you know</option>
                 </select>
                 <button id="sendbutton" onclick="getInput()">send</button>
+
+                <h3>or choose a topic below to get a brief overview</h3>
+                <select name="topic" id="topic">
+                    <option value="Housing">Housing</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Health">Health</option>
+                    <option value="Employment">Employment</option>
+                    <option value="Domestic Abuse">Domestic Abuse</option>
+
+                </select>
+                <button id="summaryButton" onclick="getSummary()">get summary</button>
+
+
 
                 <h2 id="Mentioned">Mentioned websites:</h2>
                 <textarea id="links" readonly></textarea>
