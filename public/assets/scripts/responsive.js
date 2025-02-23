@@ -10,7 +10,18 @@ function resizeNavBar() {
   
 
 // Function to download data to a file
-var chatoutput = document.getElementById('conversation');
-var linksoutput = document.getElementById('download');
-download.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(VALUE));
-download.setAttribute('download', 'filename.csv');
+function download(filename) {
+  var text = document.getElementById("conversation").value
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
+
