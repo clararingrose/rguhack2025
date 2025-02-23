@@ -11,6 +11,7 @@
                     const input = document.getElementById("input").value;
                     const conversation = document.getElementById("conversation");
                     const role = document.getElementById("role").value;
+                    console.log(JSON.stringify({ prompt: input, role: role})) //DO NOT REMOVE
 
                     if (!input) {
                         alert("Please enter a message.");
@@ -72,12 +73,17 @@
                     const conversation = document.getElementById("conversation");
 
                     conversation.value += "You: give me a brief overview of " + topic.value +  "\n";
+                    const role = document.getElementById("role").value;
+                    console.log("role in ejs " + role)
+                    const input = "give me a brief overview of " + topic.value
 
+                    console.log(JSON.stringify({ prompt: input, role: role})) //DO NOT REMOVE
                     try {
                         const response = await fetch("/", {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({ prompt: "give me a brief overview of " + topic.value }, {role: "user"})
+                            body: JSON.stringify({ prompt: input, role: role})
+
                         });
 
                         if (!response.ok) {
