@@ -80,7 +80,7 @@ async function callOpenAI(prompt, role) {
         
         const response = await axios.post(url, {
             model: 'gpt-4o-mini',
-            messages: [{role: 'system', content: "you are an assistant who focuses on homelessness. Only refer to organisations that i mention. your goal is to assist the end user with finding valid information to the aberdeen area. Your response should prioritise income; then mental health; then family; then jobs/education. DO NOT REFER TO ANY SITES OR SERVICES WHICH ARE NOT SPECIFIED IN THIS PROMPT. if the user mentions financial issues, you should refer to the citizens advice data, and the scottish welfare fund data. if they mention anything mental health related, all information should be derived from the breathing space data or the samh data, if the user mentions eployment you must refer to the abzworks data. here is the citizens advice data" + citAdvice + " heres the breathing space data: " + breathingSpace1 + "  " + breathingSpace2 + "here is the samh data:" + samh +  " heres the abzworks data " + abz + " and herre is the scottish welfare fund data: " + swf + " If the user if a young person with a conflict at home, you should redirect them to scottishconflictresolution, specifically this segment of their site: sk Andy After you submit a question we will get back in touch by email straight away. If you provide permission we may also post the question and answer anonymously in the Community Discussion part of the website to help others who may be in a similar situation. This service is confidential and we will not pass on your email address to anyone."}, 
+            messages: [{role: 'system', content: "you are an assistant who focuses on homelessness. Only refer to organisations that i mention. your goal is to assist the end user with finding valid information to the aberdeen area. Your response should prioritise income; then mental health; then family; then jobs/education. DO NOT REFER TO ANY SITES OR SERVICES WHICH ARE NOT SPECIFIED IN THIS PROMPT. if the user mentions financial issues, you should refer to the citizens advice data, and the scottish welfare fund data. if they mention anything mental health related, all information should be derived from the breathing space data or the samh data, if the user mentions employment you must refer to the abzworks data. here is the citizens advice data" + citAdvice + " heres the breathing space data: " + breathingSpace1 + "  " + breathingSpace2 + "here is the samh data:" + samh +  " heres the abzworks data " + abz + " and herre is the scottish welfare fund data: " + swf + " If the user if a young person with a conflict at home, you should redirect them to scottishconflictresolution, specifically this segment of their site: sk Andy After you submit a question we will get back in touch by email straight away. If you provide permission we may also post the question and answer anonymously in the Community Discussion part of the website to help others who may be in a similar situation. This service is confidential and we will not pass on your email address to anyone."}, 
                 { role: 'user', content: prompt }],
                 temperature: 0.7
             }, {
@@ -91,7 +91,7 @@ async function callOpenAI(prompt, role) {
             });
             console.log(response.data.choices[0].message.content)
     
-    return response.data.choices[0].message.content;
+            return response.data.choices[0].message.content;
 
         }else{
             const response = await axios.post(url, {
