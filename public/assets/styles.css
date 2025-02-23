@@ -256,3 +256,17 @@ footer {
   color: #DDD7FD;
   padding: 1em;
 }
+
+#boxLinks {
+  width: 400px;
+  margin: 0 auto;
+  overflow: auto;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 2px;
+  text-align: justify;
+  background: transparent;
+  }
+
+#abz, #swf, #bs, #cas, #samh, #scr{
+  display:none
+}

@@ -106,28 +106,38 @@
                         links.style.marginLeft = "auto";
                         links.style.marginRight = "auto";
 
-
                         
                         
                         if(data.response.toLowerCase().includes("breathing space") && !(links.value.toLowerCase().includes("breathing space"))){
                             links.value += "Breathing Space: https://www.breathingspace.scot/ \n"
+                            document.getElementById("bs").style.display = "block"
                         }
 
                         if(data.response.toLowerCase().includes("abz") && !(links.value.toLowerCase().includes("abz"))){
                             links.value += "ABZ Works: https://abzworks.co.uk/ \n"
+                            document.getElementById("abz").style.display = "block"
+
                         }
                         if(data.response.toLowerCase().includes("citizens") && !(links.value.toLowerCase().includes("citizens"))){
                             links.value += "Citizens Advice: https://www.cas.org.uk/helptoclaim \n"
+                            document.getElementById("cas").style.display = "block"
+
                         }
                         if(((data.response.toLowerCase().includes("samh") && !(links.value.toLowerCase().includes("samh"))) || (data.response.toLowerCase().includes("scottish association for mental health") && !(links.value.toLowerCase().includes("samh"))))){
                             links.value += "SAMH (Scottish Association for Mental Health): https://www.samh.org.uk/ \n"
+                            document.getElementById("samh").style.display = "block"
+
                         }
                         if(((data.response.toLowerCase().includes("swf") && !(links.value.toLowerCase().includes("swf"))) || (data.response.toLowerCase().includes("scottish welfare fund") && !(links.value.toLowerCase().includes("swf"))))){
                             links.value += "SWF (Scottish Welfare Fund): https://www.mygov.scot/scottish-welfare-fund or https://www.aberdeencity.gov.uk/services/benefits-and-advice/apply-scottish-welfare-fund \n"
+                            document.getElementById("swf").style.display = "block"
+                            
                         }
 
                         if(data.response.toLowerCase().includes("conflict resolution") && !(links.value.toLowerCase().includes("scottish conflict resolution"))){
                             links.value += "Scottish Conflict Resolution: https://www.scottishconflictresolution.org.uk/ \n"
+                            document.getElementById("scr").style.display = "block"
+
                         }
                     } catch (error) {
                         console.error("Error:", error);
@@ -198,6 +208,15 @@
 
                 <h2 id="Mentioned">Mentioned websites:</h2>
                 <textarea id="links" readonly></textarea>
+                <div id="box">
+                    <h4>My Links</h4>
+                    <p id="swf"><a href=https://www.aberdeencity.gov.uk/services/benefits-and-advice/apply-scottish-welfare-fund>Scottish Welfare Fund (SWF)</a></p>
+                    <p id="bs"><a href="https://www.breathingspace.scot/ "> Breathing Space</a></p>
+                    <p id="abz"><a href="https://abzworks.co.uk/">ABZ Works</a></p>
+                    <p id="cas"><a href="https://www.cas.org.uk/helptoclaim">Citizens advice</a></p>
+                    <p id="samh"><a href="https://www.samh.org.uk/">Scottish Association for Mental Health (SAMH)</a></p>
+                    <p id="scr"><a href="https://www.scottishconflictresolution.org.uk/">Scottish Conflict Resolution</a></p>
+                    </div>
             </div>
             
             <div class="slideshow-container">
