@@ -10,6 +10,7 @@
                 async function getInput() {
                     const input = document.getElementById("input").value;
                     const conversation = document.getElementById("conversation");
+                    const role = document.getElementById("role").value;
 
                     if (!input) {
                         alert("Please enter a message.");
@@ -22,7 +23,7 @@
                         const response = await fetch("/", {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({ prompt: input })
+                            body: JSON.stringify({ prompt: input }, {role: role})
                         });
 
                         if (!response.ok) {
@@ -107,6 +108,12 @@
 
                 <h2>user input</h2>
                 <textarea id="input"></textarea>
+
+                <label for="role">Who are you asking for?</label>
+                <select name="role" id="role">
+                    <option value="user">Yourself</option>
+                    <option value="service">Someone you know</option>
+                </select>
                 <button id="sendbutton" onclick="getInput()">send</button>
 
                 <h2 id="Mentioned">Mentioned websites:</h2>
