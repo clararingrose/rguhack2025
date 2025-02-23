@@ -100,11 +100,11 @@
   },
   {
     "Name": "Shelter Scotland",
-    "Logo": "",
+    "Logo": "https://images.ctfassets.net/6sqqfrl11sfj/4keA5DmpZZv4pQWyqupYMA/9fb22f1458d4b818a0e2e572c9c39408/red_roof_logo_v6.png",
     "Description": "Shelter Scotland provides advice, support and legal services.",
     "PhoneNumber": "0808 800 4444",
     "Email": "",
-    "URL": "",
+    "URL": "https://scotland.shelter.org.uk/",
     "category": ["Housing"]
   },
   {
@@ -115,6 +115,15 @@
     "Email": "None",
     "URL": "https://www.weareac.org/care-services",
     "category": ["Abuse"]
+  },
+  {
+    "Name": "Instant Neighbour",
+    "Logo": "https://www.instantneighbour.co.uk/wp-content/uploads/2024/11/40thLogo.jpg",
+    "Description": "Instant Neighbour has been supporting people in Aberdeen City and Shire for the last 40 years.  We support people on low incomes to set up home, by providing access to low-cost reuse furniture, white goods, clothing and bric a brac.  As well as our shops, our services include Carpetinc and Joinerinc, professional services that are accessible to everyone to use. We offer employability experiences through volunteering in our shops, warehouse, in our vans and in our office.",
+    "PhoneNumber": "01224 489955",
+    "Email": "reception@instantneighbour.co.uk",
+    "URL": "https://www.instantneighbour.co.uk/",
+    "category": ["Housing"]
   },
   {
     "Name": "",
