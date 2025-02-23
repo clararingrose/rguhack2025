@@ -21,6 +21,7 @@ body {
   margin: 40px;
   border-radius: 20px;
   background-color: #DDD7FD;
+  padding: 10px;
 }
 
 #llm button{
@@ -32,6 +33,9 @@ body {
 
 #llm select{
   padding:5px 10px;
+  margin-right: 5px;
+  width: 150px;
+  height:30px;
 }
 
 #llm h3{
@@ -40,6 +44,10 @@ body {
 
 #llm h2{
   padding-top: 10px;
+}
+
+#llm #whoYou{
+  padding-bottom: 10px;
 }
 
 /* Add a black background color to the top navigation */
