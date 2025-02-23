@@ -1,11 +1,15 @@
 <% resources.forEach(resource => { %>
-    <div>
-      <p><%= resource.Name %></p>
-      <img src="<%= resource.Logo %>">
-      <p> <%= resource.Description %></p>
-      <p> <%= resource.PhoneNumber %></p>
-      <p> <%= resource.Email %></p>
-      <p> <%= resource.Url %></p>
+    <div class="resourceBox">
 
+      <section class="resourceTitle">
+        <h2><%= resource.Name %></h2>
+        <img src="<%= resource.Logo %>">
+      </section>
+
+
+      <p> <%= resource.Description %></p>
+      <p><strong>Phone Number: </strong> <%= resource.PhoneNumber %></p>
+      <p><strong>Email: </strong> <%= resource.Email %></p>
+      <p><strong>Website: </strong><a href="<%= resource.Url %>"><%= resource.Name %></a></p>
     </div>
   <% }) %>
